@@ -1,9 +1,9 @@
 import * as Hanoi from './hanoi';
 import * as View from './ui/view';
 
-export const init = () => {
-  const board=new Hanoi.Hanoi()
+const init = () => {
   const onDOMContentLoaded = () => {
+    const board=new Hanoi.Hanoi();
     const view = View.init();
     let startTime = Date.now();
 
@@ -59,7 +59,7 @@ export const init = () => {
     container.appendChild(view.getDomElement());
     container.addEventListener('click', onClick);
 
-    const moveNum = document.querySelector('.moveNum')!;
+    const moveNum = document.querySelector('#moveNum')!;
     moveNum.innerHTML = '0';
 
     const undo = document.querySelector('#undo')!;
