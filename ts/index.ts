@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', () =>  {
   };
   const onUndo = () => {
       const id=board.moves.pop();
-      console.log("!")
       if (id !== undefined)board.selectTower(id);
       board.moves.pop();
       moveNum.innerHTML = board.moves.length.toString();
@@ -25,7 +24,6 @@ window.addEventListener('DOMContentLoaded', () =>  {
   const wait = async (ms:number)=>new Promise(resolve=>times.push(setTimeout(resolve,ms)));
   const onAuto = async () => {
       board.reset();
-      console.log("!")
       moveNum.innerHTML = board.moves.length.toString();
       await performAuto();
   };
