@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () =>  {
   };
   const onUndo = () => {
       const id=board.moves.pop();
+      console.log("!")
       if (id !== undefined)board.selectTower(id);
       board.moves.pop();
       moveNum.innerHTML = board.moves.length.toString();
