@@ -7,7 +7,7 @@ import * as Frame from './frame';
 
 export type View = {
   getDomElement: () => HTMLCanvasElement;
-  setAnimationLoop: (tick1: () => void) => void;
+  setAnimationLoop: (tick: () => void) => void;
   resize: (width: number, height: number, pixelRatio: number) => void;
   tick: (board: Hanoi.Hanoi, elapsed: number) => void;
   pickArea: (x: number, y: number) => number | null;
@@ -68,14 +68,14 @@ export const init = (): View => {
       }
       camera.updateProjectionMatrix();
     },
-    tick: (board1: Hanoi.Hanoi, elapsed: number) => {
-      discs.tick(board1,elapsed);
-      areas.tick();
+    tick: (board: Hanoi.Hanoi, elapsed: number) => {
+      discs.tick(board,elapsed);
+      areas.tick(board);
       controls.update();
       renderer.render(scene, camera);
     },
     pickArea: (x: number, y: number) => {
-      return areas.pick(camera, x, y, discs.getMeshes());
+      return areas.pick(camera, x, y);
     },
     orbitSwith:(onoff :boolean)=>{
       controls.enabled=onoff;
