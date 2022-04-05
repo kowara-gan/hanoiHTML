@@ -73,7 +73,9 @@ export class Hanoi{
       this.state.board[towerNum].disks.push(this.selectDisk);
       this.isSelect=false;
       this.selectDisk=-1;
-      this.moves.push(towerNum);
+      //元に戻す場合、操作記録用配列は更新しない
+      if(this.moves[this.moves.length-1]==towerNum)this.moves.pop();
+      else this.moves.push(towerNum);
     }
   }
   //選択可能エリア描画用に配置可能か返す

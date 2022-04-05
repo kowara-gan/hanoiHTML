@@ -3,7 +3,7 @@ import { CylinderGeometry } from 'three';
 import * as Hanoi from '../hanoi';
 //円盤オブジェクト
 export type Discs = {
-  tick: (board: Hanoi.Hanoi, elapsed: number) => void;
+  tick: (board: Hanoi.Hanoi) => void;
 };
 //初期化
 export const init = (scene: THREE.Scene): Discs => {
@@ -67,10 +67,10 @@ switch(size){
         tmpColor.setRGB(0.9,0.1,0.1);
         break;
     case 1:
-        tmpColor.setRGB(0.8,0.5,0);
+        tmpColor.setRGB(0.1,0.1,0.9);
         break;
     case 2:
-        tmpColor.setRGB(0.1,0.1,0.9);
+        tmpColor.setRGB(0.8,0.5,0);
         break;
     case 3:
         tmpColor.setRGB(0.03,0.5,0.03);

@@ -5,7 +5,6 @@ import * as Times from './times';
 window.addEventListener('DOMContentLoaded', () =>  {
   const board=new Hanoi.Hanoi();
   const view = View.init();
-  let startTime = Date.now();
   //クリック時の操作
   const onClick = (e: Event) => {
     if (!(e instanceof MouseEvent)) return;
@@ -13,8 +12,7 @@ window.addEventListener('DOMContentLoaded', () =>  {
     const y = (e.offsetY / window.innerHeight) * 2 - 1;//画面中央から-1~1で左右
     const id = view.pickArea(x, y);      
     if (id !== null){board.selectTower(id);Times.deleteWait();}
-    updataMoveNum(); 
-    startTime = Date.now();   
+    updataMoveNum();    
   };
   //経過手数を更新
   const updataMoveNum = ()=>{
@@ -72,7 +70,6 @@ window.addEventListener('DOMContentLoaded', () =>  {
   window.addEventListener('resize', onResize);
   //viewのtickをループさせて画面にゲーム情報を更新し続ける
   view.setAnimationLoop(() => {
-    let elapsed = Date.now() - startTime;
-    view.tick(board, elapsed);
+    view.tick(board);
   });
 });
