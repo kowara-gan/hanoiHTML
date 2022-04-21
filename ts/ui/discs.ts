@@ -8,7 +8,7 @@ export type Discs = {
 //初期化
 export const init = (scene: THREE.Scene): Discs => {
   const geometry = new CylinderGeometry(0.5, 0.5, 0.5, 32);
-  const material =new THREE.MeshPhongMaterial();
+  const material =new THREE.MeshLambertMaterial();
   const discsMesh = new THREE.InstancedMesh(geometry, material, 13);
 
   scene.add(discsMesh);
@@ -64,16 +64,16 @@ export const init = (scene: THREE.Scene): Discs => {
 const setColor=(tmpColor:THREE.Color,size:number)=>{
 switch(size){
     case 0:
-        tmpColor.setRGB(0.9,0.1,0.1);
+        tmpColor.setStyle("#cc2944");
         break;
     case 1:
-        tmpColor.setRGB(0.1,0.1,0.9);
+        tmpColor.setStyle("#1ea4e2");
         break;
     case 2:
-        tmpColor.setRGB(0.8,0.5,0);
+        tmpColor.setStyle("#f7ae41");
         break;
     case 3:
-        tmpColor.setRGB(0.03,0.5,0.03);
+        tmpColor.setStyle("#3daf2e");
         break;
     default:
         tmpColor.setRGB(1,1,1);

@@ -39,7 +39,7 @@ export const init = (scene: THREE.Scene): Areas => {
         areasMesh.setMatrixAt(id, tmpObject.matrix);
         //id毎のオブジェクトの色を設定
         const f= board.canSelect(i)?1:0;
-        tmpColor.setRGB(1,f,1);
+        tmpColor.setRGB(f,f,f);
         areasMesh.setColorAt(id,tmpColor);
       }
       if(board.isFinish())areasMesh.material.opacity=0;

@@ -55,7 +55,7 @@ export const init = (scene: THREE.Scene) => {
   mesh.scale.set(1,1,0.5);//正方形なので横を縮める
   scene.add(mesh);
   //杭を設置
-  const pole_material = new THREE.MeshLambertMaterial({ color: '#00aaf8' });
+  const pole_material = new THREE.MeshLambertMaterial({ color: '#333333' });
   for(let i=0;i<3;i++){
     const pole_geometry = new CylinderGeometry(0.1, 0.1, 3, 32);
     pole_geometry.translate((i-1)*2, 1, 0);

@@ -44,7 +44,7 @@
 }
 .controls button {
     color: white;
-    width: 150px;
+    width: 100px;
     padding: 8px;
     border-radius: 8px;
     border: none;
@@ -54,11 +54,14 @@
     cursor: pointer;
 }
 #undo {
-    background-color: #00aaf8;
+    background-color: #1ea4e2;
 }
 #reset {
-  background-color: #16be00;
+  background-color: #3daf2e;
 }
 #auto {
-    background-color: #d82a47;
+    background-color: #cc2944;
+}
+#useless {
+    background-color: #f7ae41;
 }
