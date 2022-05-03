@@ -70,10 +70,10 @@ switch(size){
         tmpColor.setStyle("#1ea4e2");
         break;
     case 2:
-        tmpColor.setStyle("#f7ae41");
+        tmpColor.setStyle("#3daf2e");
         break;
     case 3:
-        tmpColor.setStyle("#3daf2e");
+        tmpColor.setStyle("#f7ae41");
         break;
     default:
         tmpColor.setRGB(1,1,1);

@@ -7,11 +7,12 @@ window.addEventListener('DOMContentLoaded', () =>  {
   const view = View.init();
   //クリック時の操作
   const onClick = (e: Event) => {
+    Times.deleteWait();
     if (!(e instanceof MouseEvent)) return;
     const x = (e.offsetX / window.innerWidth) * 2 - 1;//画面中央から-1~1で上下
     const y = (e.offsetY / window.innerHeight) * 2 - 1;//画面中央から-1~1で左右
     const id = view.pickArea(x, y);      
-    if (id !== null){board.selectTower(id);Times.deleteWait();}
+    if (id !== null){board.selectTower(id);}
     updataMoveNum();    
   };
   //経過手数を更新
